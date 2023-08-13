@@ -1,6 +1,6 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
     "parameters": {
     
         "ncdns": {
@@ -167,7 +167,9 @@
             "name": "[parameters('virtualMachines_frontend1_name')]",
             "apiVersion": "2018-10-01",
             "location": "eastus2",
-            "tags": {},
+            "tags": {
+                "BreadSite": "[resourceGroup().location]"
+            },
             "scale": null,
             "properties": {
                 "hardwareProfile": {
@@ -774,6 +776,24 @@
                             "sourceAddressPrefixes": [],
                             "destinationAddressPrefixes": []
                         }
+                    {
+                         "name": "httRDPp",
+                        "etag": "W/\"23cae7e3-8278-4ad0-90e2-656a8803fa30\"",
+                        "properties": {
+                            "provisioningState": "Succeeded",
+                            "protocol": "*",
+                            "sourcePortRange": "3389",
+                            "destinationPortRange": "80",
+                            "sourceAddressPrefix": "*",
+                            "destinationAddressPrefix": "*",
+                            "access": "Allow",
+                            "priority": 350,
+                            "direction": "Inbound",
+                            "sourcePortRanges": [],
+                            "destinationPortRanges": [],
+                            "sourceAddressPrefixes": [],
+                            "destinationAddressPrefixes": []
+                    }
                     }
                 ],
                 "defaultSecurityRules": [
