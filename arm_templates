@@ -168,7 +168,8 @@
             "apiVersion": "2018-10-01",
             "location": "eastus2",
             "tags": {
-                "BreadSite": "[resourceGroup().location]"
+                "BeardSite": "[resourceGroup().location]"
+
             },
             "scale": null,
             "properties": {
@@ -776,26 +777,27 @@
                             "sourceAddressPrefixes": [],
                             "destinationAddressPrefixes": []
                         }
-                    }
-                    {
-                         "name": "httRDPp",
-                        "etag": "W/\"23cae7e3-8278-4ad0-90e2-656a8803fa30\"",
-                        "properties": {
-                            "provisioningState": "Succeeded",
-                            "protocol": "*",
-                            "sourcePortRange": "3389",
-                            "destinationPortRange": "80",
-                            "sourceAddressPrefix": "*",
-                            "destinationAddressPrefix": "*",
-                            "access": "Allow",
-                            "priority": 350,
-                            "direction": "Inbound",
-                            "sourcePortRanges": [],
-                            "destinationPortRanges": [],
-                            "sourceAddressPrefixes": [],
-                            "destinationAddressPrefixes": []
-                    }
-                    }
+                    },
+                                       
+                        {
+                            "name": "RDPp",
+                            "etag": "W/\"23cae7e3-8278-4ad0-90e2-656a8803fa30\"",
+                            "properties": {
+                                "provisioningState": "Succeeded",
+                                "protocol": "*",
+                                "sourcePortRange": "3389",
+                                "destinationPortRange": "80",
+                                "sourceAddressPrefix": "*",
+                                "destinationAddressPrefix": "*",
+                                "access": "Allow",
+                                "priority": 350,
+                                "direction": "Inbound",
+                                "sourcePortRanges": [],
+                                "destinationPortRanges": [],
+                                "sourceAddressPrefixes": [],
+                                "destinationAddressPrefixes": []
+                                }
+                        }   
                 ],
                 "defaultSecurityRules": [
                     {
@@ -950,7 +952,6 @@
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[parameters('virtualNetworks_coffeenet_name')]",
             "apiVersion": "2018-10-01",
-            "location": "eastus2",
             "location": "eastus2",
             "scale": null,
             "properties": {
